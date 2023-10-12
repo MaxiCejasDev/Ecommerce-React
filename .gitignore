@@ -11,6 +11,14 @@ node_modules
 dist
 dist-ssr
 *.local
+package-lock.json
+package.json
+public
+.eslintrc.cjs
+postcss.config.json
+README.md
+tailwind.config.js
+vite.config.js
 
 # Editor directories and files
 .vscode/*
@@ -22,11 +30,4 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
-package-lock.json
-package.json
-public
-.eslintrc.cjs
-postcss.config.json
-README.md
-tailwind.config.js
-vite.config.js
+
