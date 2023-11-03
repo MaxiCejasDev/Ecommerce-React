@@ -1,13 +1,26 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
-import Header from './components/Header/header'
+import {ItemListContainer} from './components/ItemListContainer/ItemListContainer'
+import { ItemDetailContainer } from './components/ItemDetailContainer/ItemDetailContainer'
+import { BrowserRouter as Router,Routes,Route, Navigate} from 'react-router-dom'
+import { NavBar } from './components/NavBar/NavBar'
+import { Hero } from './components/Hero/Hero'
 import './index.css'
+
+
 
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <>
-    <Header/>
-    </>
+    <Router>
+      
+      <NavBar/>
+      <Routes>
+        <Route path='/' element={<Hero/>}/>
+        <Route path='/categoria/:cid' element={<ItemListContainer/>}/>
+        <Route path='/detail/:pid' element={<ItemDetailContainer/>}/>
+        <Route path='*' element={<Navigate to='/' />} />
+      </Routes>
+    </Router>
   </React.StrictMode>,
 )

@@ -1,22 +1,32 @@
-function Hero() {
+export const Hero = () => {
   return (
-    <>
-      <div className="w-full h-[calc(100vh-80px)] overflow-hidden grid grid-cols-2">
-        <div className="ml-[80px] flex flex-col justify-center items-start font-poppins">
-          <h1 className="font-mono text-8xl font-bold z-10 text-secondary">Magic mind</h1>
-          <h2 className="z-10 font-bold text-lg text-[#475569]">Desarrolla tu potencial desde cualquier lugar en el mundo.</h2>
-          <a className="flex mt-4 py-[10px] px-[50px] rounded-[20px] 
-          bg-[#EAEDF1] border-[0.5px] z-10 font-bold text-primary hover:bg-[#e4e7eb] hover:text-[#646a77]"
-            href="">
-            Ver cursos
-          </a>
+    <div className="grid grid-cols-2 bg-darkpure h-[calc(100vh-60px)]">
+        <div className="text-white flex flex-col pl-[80px] items-start justify-center">
+            <div>
+                <p className="font-bold text-[1rem] mb-[2px]">Tu portal hacia al mundo digital.</p>
+                <h1 className="font-bold text-[3.5rem] mb-[20px]">Magic Market</h1>
+            </div>
+            <div className="flex mb-[10px]">
+                <a className="bg-darklight h-[65px] w-[200px] overflow-hidden flex items-center justify-center" href="">
+                    <img className="h-[24px] mr-[10px]" src="https://drive.google.com/uc?export=download&id=1Sp0pxjJ5vRQOazwDgUq7-pzUA9z6evcx" alt="" />
+                    <div className="ml-[10px] text-[14px]">
+                        Ver todos los <br /><span className="font-bold">Productos</span>
+                    </div>
+                </a>
+                <a className="bg-darklight h-[65px] w-[200px] overflow-hidden flex items-center justify-center ml-[10px]" href="">
+                    <img className="h-[24px] mr-[10px]" src="https://drive.google.com/uc?export=download&id=1FenN8fkbCRUHOwOeOQXL6Fpk4mrRtLEm" alt="" />
+                    <div className="ml-[10px] text-[14px]">
+                        Ver productos <br /><span className="font-bold">Destacados</span>
+                    </div>
+                </a>
+            </div>
         </div>
         <div className="flex justify-center items-center">
-          <img className="h-[500px] z-10" src="https://drive.google.com/uc?export=download&id=1A2cELyXeHU4VxPPjE2oP1iz4rwa7HmyI" alt="World" />
+            <figure className="relative">
+                <img className="h-[270px] w-[250px] border-[1px] border-white" src="https://drive.google.com/uc?export=download&id=1omMFR5qQzYBKZIjwkObxvN-IRHmtXEzn" alt="" />
+                <img className="h-[270px] w-[250px] absolute top-[140px] right-[125px] z-10 border-[1px] border-white" src="https://drive.google.com/uc?export=download&id=1omMFR5qQzYBKZIjwkObxvN-IRHmtXEzn" alt="" />
+            </figure>
         </div>
-      </div>
-    </>
-  );
+    </div>
+  )
 }
-
-export default Hero;

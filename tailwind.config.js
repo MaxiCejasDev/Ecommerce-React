@@ -7,8 +7,10 @@ export default {
     },
     extend: {
       colors: {
-        primary:'#6b7390',
-        secondary: '#1379E8'
+        darkpure:'#030303',
+        darklight: '#131313',
+        greenlight: '#739072',
+        fontlight: '#BBBBBB'
       },
       boxShadow: {
         'blue':'-2px 19px 32px -3px rgba(19,121,232,0.19)'
