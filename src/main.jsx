@@ -17,8 +17,8 @@ ReactDOM.createRoot(document.getElementById('root')).render(
       <NavBar/>
       <Routes>
         <Route path='/' element={<Hero/>}/>
-        <Route path='/categoria/:cid' element={<ItemListContainer/>}/>
-        <Route path='/detail/:pid' element={<ItemDetailContainer/>}/>
+        <Route path='/category/:cid' element={<ItemListContainer/>}/>
+        <Route path='/:cid/detail/:pid' element={<ItemDetailContainer/>}/>
         <Route path='*' element={<Navigate to='/' />} />
       </Routes>
     </Router>

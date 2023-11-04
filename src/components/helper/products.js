@@ -1,5 +1,5 @@
 let shopProducts = [
-    {categoria: 'teclado',
+    {category: 'teclado',
     products:[
         {id:'1',nombre:'Teclado gamer Redragon Shiva K512',precio: 38499,
         img1:'https://drive.google.com/uc?export=download&id=1FPZcsv_ZLsjGEBGlPqMS3prdeBe2ok3s',img2:'https://drive.google.com/uc?export=download&id=1wUDOCdj2tEItHg40r10JPjrtw1PLYLZH',img3:'https://drive.google.com/uc?export=download&id=1wX2yc4RKWvPhQz4b4SkJvxgw8Tq9bgJw'},
@@ -10,7 +10,7 @@ let shopProducts = [
         {id:'4',nombre:'Teclado gamer HyperX Alloy Elite 2',precio:129195,
         img1:'https://drive.google.com/uc?export=download&id=1VBjIQZtGb8dIUZHTO0aTsDkwm03GLJZD',img2:'https://drive.google.com/uc?export=download&id=1JuEdQ-7iZOQ0aK0PBoQ9dN5eX5qRll-L',img3:'https://drive.google.com/uc?export=download&id=1C8V3YeJame3GueLJIAaHpv0O4S7acoOJ'}
     ]},
-    {categoria: 'mouse',
+    {category: 'mouse',
     products:[
         {id:'1',nombre:'Mouse gamer Logitech G Series Lightsync G203',precio:31499,
         img1:'https://drive.google.com/uc?export=download&id=1Q_cJA3NtOqb1vn08aMCpy0kVURvUbn2n',img2:'https://drive.google.com/uc?export=download&id=1rMlVEl9AZ4-aAOnWhmEAgZ6qK5KqPVmG',img3:'https://drive.google.com/uc?export=download&id=1m6zqO-IfIY4Pm8VqlrW68L3UMLW4kLyn'},
@@ -21,7 +21,7 @@ let shopProducts = [
         {id:'4',nombre:'Mouse Xinua M8 Gamer',precio:16569,
         img1:'https://drive.google.com/uc?export=download&id=1LfOCSMzb3Cf6NpTOeejbnjQH6_bHrL7C',img2:'https://drive.google.com/uc?export=download&id=1ZEEjzWET77JSOo1_icGKlwtyk8eoIvik',img3:'https://drive.google.com/uc?export=download&id=12NjkUQiqEJcYJlnoHnqmvFbUfJz-jDGR'}
     ]},
-    {categoria: 'auricular',
+    {category: 'auricular',
     products:[
         {id:'1',nombre:'Auriculares inalámbricos HyperX Cloud Flight HX-HSCF',precio:82999,
         img1:'https://drive.google.com/uc?export=download&id=1bCcHfNGtfGAC2sIwRxBojNsRYzJT3uL0',img2:'https://drive.google.com/uc?export=download&id=1NPvFlr2MBHTitREAK_uUwhxP2aa1_JHY',img3:'https://drive.google.com/uc?export=download&id=1g71tPE2qB-sfvI5jtSVjHEdsY9guqhhu'},
@@ -32,7 +32,7 @@ let shopProducts = [
         {id:'4',nombre:'Auriculares Redragon Gamer Zeus X H510-RGB',precio:50729,
         img1:'https://drive.google.com/uc?export=download&id=1jzUXsuuKoEf1o0OhUsfhC5Mjduoorruw',img2:'https://drive.google.com/uc?export=download&id=1gbjDsqkRGygmeR6xicXieukWl9rjrgQk',img3:'https://drive.google.com/uc?export=download&id=1QFgRVVvPt4zM-BL-4TILR0uXUYTfebrP'}
     ]},
-    {categoria: 'silla',
+    {category: 'silla',
     products:[
         {id:'1',nombre:'Silla Gaming Nbx Ecocuero',precio:139999,
         img1:'https://drive.google.com/uc?export=download&id=1QIn-ezmzJyT3uqaGXAzEaBp7fU1vWGND',img2:'https://drive.google.com/uc?export=download&id=1vgix7i8fBbnYg40fU9iTqN5L8_ajxIxU',img3:'https://drive.google.com/uc?export=download&id=1Rwgv75GnRvvCZuTs5GzsLPlp22a9zXBa'},
@@ -43,7 +43,7 @@ let shopProducts = [
         {id:'4',nombre:'Silla de escritorio Cougar Armor S',precio:272899,
         img1:'https://drive.google.com/uc?export=download&id=1WzbpznSRCknEWW9iIQKO281Dit9ogUqP',img2:'https://drive.google.com/uc?export=download&id=1Wpj-W5-fLN_UlAlSBuNHTqjZwX8U0t8p',img3:'https://drive.google.com/uc?export=download&id=1-_fiOLBngYFXMb9FdzfEaGvT6ID3mUzU'}
     ]},
-    {categoria: 'portatil',
+    {category: 'portatil',
     products:[
         {id:'1',nombre:'Apple Macbook Air',precio:1369199,
         img1:'https://drive.google.com/uc?export=download&id=1QTA33fCy_--2-kn70JCUfS_pvCMnbCbZ',img2:'https://drive.google.com/uc?export=download&id=1X-K9MtDaSDKmMH0CeF32WlNa_8EDkztT',img3:'https://drive.google.com/uc?export=download&id=1BoPoQU1RvcxX7khDo-Z0LJRBCN1kPCLM'},
@@ -54,7 +54,7 @@ let shopProducts = [
         {id:'4',nombre:'Notebook Lenovo Ip 3 14alc6',precio:780999,
         img1:'https://drive.google.com/uc?export=download&id=13AVC1LWQnAXEKGnKIHWRGQ7mcDGaj4E2',img2:'https://drive.google.com/uc?export=download&id=1nay6V1KZOm7ID7aH-b0M0rsPYkcP27ER',img3:'https://drive.google.com/uc?export=download&id=1ZGV7DdKAuC9A-Fko837bE5xW2QxaVRAL'}
     ]},
-    {categoria: 'camara',
+    {category: 'camara',
     products:[
         {id:'1',nombre:'Cámara web Logitech C922 Pro Full HD 30FPS',precio:94879,
         img1:'https://drive.google.com/uc?export=download&id=1uZEPGthMvdSnL-nkqMtogILGa3g5NWmh',img2:'https://drive.google.com/uc?export=download&id=1xBQObY2vHL-j9J0NxmZbUtOPLudCRPdF',img3:'https://drive.google.com/uc?export=download&id=1r7A0e4xhydlgjVd_Ru2mtaq3fe0K2lnv'},
@@ -65,7 +65,7 @@ let shopProducts = [
         {id:'4',nombre:'Cámara Redragon Hitman GW800',precio:46206,
         img1:'https://drive.google.com/uc?export=download&id=1eOuECY-T6qS1pJDgcHEyaWATObsDeZRB',img2:'https://drive.google.com/uc?export=download&id=1JOqrxPPORUUqK3_-ZZ2vXHrWXRnbGVcX',img3:'https://drive.google.com/uc?export=download&id=1SiSCA2H_EGNc-P9TWqE56XSGfvzfIwO8'}
     ]},
-    {categoria: 'tablet',
+    {category: 'tablet',
     products:[
         {id:'1',nombre:'Tablet Samsung Galaxy Tab A7 Lite',precio:110999,
         img1:'https://drive.google.com/uc?export=download&id=1fqY91vtZPONHabZCoI_DZ912GWY2wDQt',img2:'https://drive.google.com/uc?export=download&id=1uzziOWz08C1WnjdhxktQKmdNqt4j1V1s',img3:'https://drive.google.com/uc?export=download&id=1d-KXiTHNx78sZY-6Pn2Gls7NWiXM4tE3'},
@@ -76,7 +76,7 @@ let shopProducts = [
         {id:'4',nombre:'Tablet Aiwa Tablet TA-10-464',precio:105599,
         img1:'https://drive.google.com/uc?export=download&id=1F8zN7WUnH77K0KIl0gdC3cNX6hElI0qK',img2:'https://drive.google.com/uc?export=download&id=1tLyZN3FYcr69zo-2RuuYSCPD8h0DzWSp',img3:'https://drive.google.com/uc?export=download&id=1mTgsOSkfa780IYC4PoJ_cJ3ZchDY29Hq'}
     ]},
-    {categoria: 'monitor',
+    {category: 'monitor',
     products:[
         {id:'1',nombre:'Monitor Led Noblex Mk24x7100 23.8"',precio:97099,
         img1:'https://drive.google.com/uc?export=download&id=1N8TQ-4QMg8P6yQNlhv_FIYjYgQpsm3Qz',img2:'https://drive.google.com/uc?export=download&id=1ilrK0RAXqlOCJvIWXqJg_OMbOew34oKR',img3:'https://drive.google.com/uc?export=download&id=18sOTh2z-e6sZOi35_yn553nXCikEEuCI'},
@@ -91,9 +91,9 @@ let shopProducts = [
 
 
 export const productFetch = ()=>{
-    return new Promise((res, rej) => {
+    return new Promise((res) => {
         setTimeout(()=>{
             res(shopProducts)
-        },2000)
+        },1000)
     })
 }
