@@ -1,5 +1,6 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
+import { BagProvider } from './Context/BagProvider'
 import {ItemListContainer} from './components/ItemListContainer/ItemListContainer'
 import { ItemDetailContainer } from './components/ItemDetailContainer/ItemDetailContainer'
 import { BrowserRouter as Router,Routes,Route, Navigate} from 'react-router-dom'
@@ -10,7 +11,9 @@ import './index.css'
 
 
 
+
 ReactDOM.createRoot(document.getElementById('root')).render(
+  <BagProvider>
   <React.StrictMode>
     <Router>
       
@@ -22,5 +25,6 @@ ReactDOM.createRoot(document.getElementById('root')).render(
         <Route path='*' element={<Navigate to='/' />} />
       </Routes>
     </Router>
-  </React.StrictMode>,
+  </React.StrictMode>
+  </BagProvider>
 )

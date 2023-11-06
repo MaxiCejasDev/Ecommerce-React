@@ -1,9 +1,21 @@
 import { useParams,} from "react-router-dom"
-import { useEffect, useState } from "react"
+import {  useEffect, useState } from "react"
 import { productFetch } from "../helper/products"
+import { ItemCounter } from "../Hooks/ItemCounter/ItemCounter"
+import {useBag} from "../../Context/BagProvider"
+
+
 export const ItemDetailContainer = () => {
   const { cid,pid } = useParams()
   const [product, setProduct] = useState([])
+  const {bag, addToBag} = useBag()
+
+  const handleAddBag = (count)=>{
+    addToBag({nombre: product.nombre,precio:product.precio,cantidad:count})
+  }
+
+
+  console.log(bag)
   
   useEffect(() => {
     productFetch()
@@ -33,8 +45,9 @@ export const ItemDetailContainer = () => {
      <div className="w-full">
       <h3 className="text-3xl">{product.nombre}</h3>
       <p className="font-bold">${product.precio}</p>
+      <ItemCounter handleAddBag={handleAddBag}/>
+     
      </div>
-
     </div>
       
       
