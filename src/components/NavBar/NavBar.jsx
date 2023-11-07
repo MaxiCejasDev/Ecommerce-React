@@ -12,7 +12,7 @@ export const NavBar = () => {
   
   return (
     <>
-      <div className="bg-darkpure h-[60px] w-screen flex items-center justify-around border-b-[1px] border-white">
+      <div className="bg-darkpure h-[60px] w-full flex items-center justify-around border-b-[1px] border-white">
         <div className="overflow-hidden h-[80px] flex items-center">
           <li className="text-white list-none">
             <NavLink to={'./'} activeclassname='currentCategory'><img className="h-[116px]" src="https://drive.google.com/uc?export=download&id=13CH_TGZzP7Fw_MLvOWzMgSRjrO-6QndO" alt="" /></NavLink>

@@ -1,5 +1,6 @@
 export const Hero = () => {
   return (
+    <>
     <div className="grid grid-cols-2 bg-darkpure h-[calc(100vh-60px)]">
         <div className="text-white flex flex-col pl-[80px] items-start justify-center">
             <div>
@@ -28,5 +29,6 @@ export const Hero = () => {
             </figure>
         </div>
     </div>
+    </>
   )
 }

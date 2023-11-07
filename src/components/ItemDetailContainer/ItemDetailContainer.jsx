@@ -8,15 +8,14 @@ import {useBag} from "../../Context/BagProvider"
 export const ItemDetailContainer = () => {
   const { cid,pid } = useParams()
   const [product, setProduct] = useState([])
+  const [purchase, setPurchase] = useState(false)
   const {bag, addToBag} = useBag()
 
   const handleAddBag = (count)=>{
-    addToBag({nombre: product.nombre,precio:product.precio,cantidad:count})
+    addToBag({id: product.id,img: product.img1,nombre: product.nombre,precio:product.precio*count,cantidad:count})
+    setPurchase(true)
   }
 
-
-  console.log(bag)
-  
   useEffect(() => {
     productFetch()
     .then((res)=>{
@@ -28,24 +27,27 @@ export const ItemDetailContainer = () => {
   
   return (
     <>
-    <div className="grid grid-cols-2">
-     <div className="w-full h-screen  overflow-hidden grid grid-rows-2">
-        <div className="">
-          <img className="object-cover h-full" src={product.img1} alt="" />
+    <div className="grid grid-cols-2 h-[calc(90vh-60px)] justify-items-center mt-[20px]">
+     <div className="w-[80%] h-full overflow-hidden grid grid-rows-rowdetail">
+        <div className="h-full w-full border-[1px] border-black">
+          <img className="object-contain h-full w-full" src={product.img1} alt="" />
         </div>
-        <div className="grid grid-cols-2">
-          <div>
-            <img className="object-cover h-full" src={product.img2} alt="" />
+        <div className="w-full overflow-hidden flex border-b-[1px] border-black">
+          <div className="border-l-[1px] flex items-center justify-center w-[50%] h-full border-black">
+            <img className="max-w-[90%] max-h-[90%]" src={product.img2} alt="" />
           </div>
-          <div>
-            <img className="object-cover h-full" src={product.img3} alt="" />
+          <div className="border-l-[1px] flex items-center justify-center w-[50%] h-full border-r-[1px] border-black">
+            <img className="max-w-[90%] max-h-[90%]" src={product.img3} alt="" />
           </div>
         </div>
      </div>
-     <div className="w-full">
-      <h3 className="text-3xl">{product.nombre}</h3>
-      <p className="font-bold">${product.precio}</p>
-      <ItemCounter handleAddBag={handleAddBag}/>
+     <div className="w-full self-start mt-[20px]">
+      <h3 className="text-3xl font-poppins">{product.nombre}</h3>
+      <p className="font-poppins text-[15px]">${product.precio}</p>
+      
+      <ItemCounter handleAddBag={handleAddBag} purchase={purchase}/>
+      
+      
      
      </div>
     </div>

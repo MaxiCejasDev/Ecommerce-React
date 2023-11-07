@@ -10,14 +10,17 @@ export const BagProvider = ({children})=>{
     const [bag, setBag] = useState([])
 
 
-const addToBag = (product)=> {
-    setBag([...bag, product])
-}
-    
+    const addToBag = (product)=> {
+        setBag([...bag, product])
+    }
+
+    const deleteBag = ()=>{
+        setBag([])
+    }
 
 
     return (
-        <BagContext.Provider value={{bag,addToBag}}>
+        <BagContext.Provider value={{bag,addToBag,deleteBag}}>
             {children}
         </BagContext.Provider>
     )
