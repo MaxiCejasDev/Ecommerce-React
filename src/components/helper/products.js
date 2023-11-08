@@ -94,6 +94,6 @@ export const productFetch = ()=>{
     return new Promise((res) => {
         setTimeout(()=>{
             res(shopProducts)
-        },1000)
+        },1500)
     })
 }

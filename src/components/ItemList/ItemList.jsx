@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom"
-
+import {Loader} from "../Loader/Loader"
 
 
 export const ItemList = ({products,categoryId,loading}) => {
@@ -7,9 +7,9 @@ export const ItemList = ({products,categoryId,loading}) => {
     
   return (
     <>
-    <ul className='flex items-start justify-between flex-wrap'>
-      {loading ? (
-      <h2>Holaaaa</h2>
+    <ul className={loading?'h-[calc(100vh-60px)] bg-black flex justify-center items-center' :'flex items-start justify-between flex-wrap'}>
+      {loading? (
+      <Loader/>
       ) 
       : 
       (

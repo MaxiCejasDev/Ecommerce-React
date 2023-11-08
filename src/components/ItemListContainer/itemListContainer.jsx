@@ -19,7 +19,7 @@ export const ItemListContainer = () => {
       
       })
     .finally(()=>{
-      setLoading(false)
+      setLoading(!true)
     })
     
     
