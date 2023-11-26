@@ -9,9 +9,9 @@ export default {
       colors: {
         darkpure:'#030303',
         darklight: '#131313',
+        whitelight: '#EEEEEE',
         ivorywhite: '#EFF6FF',
-        greenlight: '#739072',
-        fontlight: '#BBBBBB',
+        greenlight: '#059669',
         bagstroke: '#C8C0C0'
       },
       boxShadow: {
@@ -19,7 +19,8 @@ export default {
       },
       gridTemplateRows:{
         'rowbag': '10% 1fr 25%',
-        'rowdetail': '70% 1fr'
+        'rowdetail': '70% 1fr',
+        
       },
       gridTemplateColumns:{
         'colbag': '25% 1fr 10%'

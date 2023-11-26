@@ -7,24 +7,27 @@ export const ItemList = ({products,categoryId,loading}) => {
     
   return (
     <>
-    <ul className={loading?'h-[calc(100vh-60px)] bg-black flex justify-center items-center' :'flex items-start justify-between flex-wrap'}>
+    <ul className={loading?'h-[calc(100vh-60px)] bg-black flex justify-center items-center' :'grid grid-cols-1 gap-y-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-x-4 px-4 pt-4'}>
       {loading? (
       <Loader/>
       ) 
       : 
       (
-        products.map((element) => 
-          element.map((productProperty,index)=>(
-            <li key={index} className='h-[300px] w-[300px] border-[1px] border-black'>
-            <div className='flex flex-col justify-center items-center '>
-              <img className='h-[200px] w-[200px] object-contain' src={`${productProperty.img1}`} alt="" />
-              <h3>{productProperty.nombre}</h3>
-              <p>${productProperty.precio}</p>
-              <button className='py-[8px] px-[20px] bg-darklight text-white font-bold'><Link to={`/${categoryId}/detail/${productProperty.id}`}>Ver Detalle</Link></button>
+        products.map((product,index) => 
+            <li key={index} className='bg-white shadow-lg shadow-neutral-300' >
+            <div className='flex flex-col justify-center items-center'>
+              <img className='h-[250px] w-[200px] object-contain pt-2' src={`${product.img1}`} alt="" />
+              <h3 className="font-poppins text-lg text-center text-neutral-900">{product.name}</h3>
+              <p className="font-poppins text-sm text-gray-600">${product.price}</p>
+              <div className="pb-4">
+                <button className='bg-darklight button-hover hover:bg-white hover:text-black hover:border-[1px] hover:py-[8px] hover:border-black shadow-lg shadow-neutral-300 py-[9px] px-[30px] text-white font-bold font-poppins text-sm rounded-3xl'>
+                  <Link className="flex" to={`/${categoryId}/detail/${product.id}`}>Ver detalles<img className="white-img h-[20px] w-[20px] ml-2" src="https://drive.google.com/uc?export=download&id=1LsPC_PH_z_7EmsH6YSlSiw_A6VzY-K2Z" alt="" />
+                  </Link>
+                  </button>
+              </div>
+              
             </div>
-          </li>
-          ))
-            
+          </li>   
         ))
 
       }

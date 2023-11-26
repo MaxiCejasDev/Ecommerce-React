@@ -13,15 +13,35 @@ export const BagProvider = ({children})=>{
     const [bagAmount,setBagAmount] = useState(0)
 
     const addToBag = (product)=> {
-        setBag([...bag, product])
+        
+        const updateBagAmount = bag.map((item)=>{
+            if(item.id === product.id){
+                setBagAmount(bagAmount + product.amount)
+                return{
+                    ...item,
+                    price: item.price += product.price * product.amount,
+                    amount: item.amount += product.amount
+                }
+                
+            }
+            else{
+                return item
+            }
+
+        })
+        if(!updateBagAmount.some((item)=> item.id === product.id)){
+            setBag([...bag, product])
+        }
+
+        
 
         
     }
     useEffect(()=>{
-
+        
 
         const productAmount = bag.reduce((acc,item)=>{
-                return acc + item.cantidad
+                return acc + item.amount
             },0)
         setBagAmount(productAmount)
         
@@ -29,12 +49,13 @@ export const BagProvider = ({children})=>{
     
     ,[bag])
     
-    const deleteBag = ()=>{
-        setBag([])
+    const deleteBag = (productId)=>{
+        const productRefresh = bag.filter((item)=> item.id !== productId)
+        setBag(productRefresh)
     }
-    console.log(bagAmount)
+    
     return (
-        <BagContext.Provider value={{bag,addToBag,deleteBag,bagAmount}}>
+        <BagContext.Provider value={{bag,addToBag,deleteBag,bagAmount,setBag}}>
             {children}
         </BagContext.Provider>
     )

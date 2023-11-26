@@ -14,7 +14,7 @@ export const Loader = () => {
         <div className="pl__dot"></div>
         <div className="pl__dot"></div>
         <div className="pl__dot"></div>
-        <div className="pl__text">Loading…</div>
+        <div className="pl__text">Cargando...</div>
       </div>
     </>
   );
