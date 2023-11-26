@@ -76,9 +76,9 @@ export const ItemDetailContainer = () => {
       {detailLoading ? (
         <Loader />
       ) : (
-        <div className="grid md:grid-cols-2 h-[calc(100vh-60px)] bg-whitelight justify-items-center">
+        <div className="grid md:grid-cols-2 h-[calc(100vh-60px)] mb-[600px] sm:mb-[500px] md:mb-0 bg-whitelight justify-items-center">
           <ItemDetailSelectImg product={product} unSelectedImg={unSelectedImg} selectImg={selectImg}/>
-          <div className="w-full px-10 h-full mt-8 md:mt-0 pt-[50px] bg-white shadow-lg shadow-neutral-300">
+          <div className="w-full px-10 h-full mt-8 md:mt-0 pt-[50px] bg-white">
             <h3 className="text-2xl font-poppins font-bold pb-2 ml-4">{product.name}</h3>
             <p className="font-poppins text-[16px] text-neutral-600 font-bold pb-20 ml-4">${product.price}</p>
             <ul className="h-[150px] w-full grid grid-cols-2 sm:grid-cols-3 gap-x-4 mb-20 gap-y-2 sm:mb-4 sm:gap-y-0">

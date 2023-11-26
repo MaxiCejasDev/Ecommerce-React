@@ -27,7 +27,7 @@ export const NavCategoryMobile = () => {
           Todas las categorias
         </Link>
       </div>
-      <div onClick={handleAccesoryMobileMenu} className={accesoryMobileMenu?"flex justify-start items-center relative pl-2 border-b-[1px] border-r-[1px] border-black 0 w-[150px]":"flex justify-start items-center relative pl-2 w-[150px]"}>
+      <div onClick={handleAccesoryMobileMenu} className={accesoryMobileMenu?"flex justify-start items-center relative pl-2 0 w-[150px]":"flex justify-start items-center relative pl-2 w-[150px]"}>
         <img
           className="h-[20px] w-[20px] black-img"
           src="https://drive.google.com/uc?export=download&id=1SuORGAZQ5d0viq3Q8Fkt2jYq7KKU5ATu"
@@ -43,7 +43,7 @@ export const NavCategoryMobile = () => {
         />
         {accesoryMobileMenu && <AccesoryMenuMobile/>}
       </div>
-      <div onClick={handleScreenMobileMenu} className={screenMobileMenu?"flex justify-start items-center relative pl-2 border-b-[1px] border-r-[1px] border-black w-[150px]":"flex justify-start items-center relative pl-2 w-[150px]"}>
+      <div onClick={handleScreenMobileMenu} className={screenMobileMenu?"flex justify-start items-center relative pl-2 w-[150px]":"flex justify-start items-center relative pl-2 w-[150px]"}>
         <img
           className="h-[20px] w-[20px] black-img"
           src="https://drive.google.com/uc?export=download&id=1MwLciBusePiLwX6HGfXPwtnWxfeEfLPC"

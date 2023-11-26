@@ -19,6 +19,23 @@
 }
 
 
+/* INPUT SELECT IMG */
+input[type="radio"]{
+  display: none;
+}
+
+input[type="radio"]:checked + label{
+  cursor: pointer;
+  border: 2px solid rgb(104, 169, 234);
+  width: 100%;
+  height: 100%;
+}
+
+.button-counter:disabled{
+  background-color: rgba(0, 0, 0, 0.579);
+}
+
+
 /* Hero */
 @media (max-width:767px) {
   .hero-container{
@@ -38,23 +55,6 @@
 }
 
 
-
-
-/* INPUT SELECT IMG */
-input[type="radio"]{
-  display: none;
-}
-
-input[type="radio"]:checked + label{
-  cursor: pointer;
-  border: 2px solid rgb(104, 169, 234);
-  width: 100%;
-  height: 100%;
-}
-
-.button-counter:disabled{
-  background-color: rgba(0, 0, 0, 0.579);
-}
 
 /* LOADER STYLE */
 .pl {

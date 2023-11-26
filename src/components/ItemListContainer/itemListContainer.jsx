@@ -29,7 +29,7 @@ export const ItemListContainer = () => {
   },[cid])
   
   return (
-    <div className='max-h-fit sm:min-h-[calc(100vh-60px)] bg-whitelight'>
+    <div className='max-h-fit sm:min-h-[calc(100vh-60px)] pb-4 bg-whitelight'>
       <div className='bg-black h-[60px] w-full md:hidden z-0'></div>
       <ItemList products={products} categoryId={cid} loading={loading}/>
     </div> 

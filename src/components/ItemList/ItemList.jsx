@@ -14,7 +14,7 @@ export const ItemList = ({products,categoryId,loading}) => {
       : 
       (
         products.map((product,index) => 
-            <li key={index} className='bg-white shadow-lg shadow-neutral-300' >
+            <li key={index} className='bg-white sm:shadow-lg sm:shadow-neutral-300' >
             <div className='flex flex-col justify-center items-center'>
               <img className='h-[250px] w-[200px] object-contain pt-2' src={`${product.img1}`} alt="" />
               <h3 className="font-poppins text-lg text-center text-neutral-900">{product.name}</h3>

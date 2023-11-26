@@ -4,16 +4,16 @@ import { useState } from 'react';
 
 
 export const OrderContainer = ({ totalOrder }) => {
-  const [orderId,setOrderId] = useState('')
   const [formOrder,setFormOrder] = useState(true)
+  const [formError,setFormError] = useState({phonelength: false,emailvalidation: false})
   const [formData,setFormData] = useState({
     name:'',
     lastname: '',
     phone: '',
-    email:''
+    email:'',
+    emailrepeated:''
   })
   const {bag,setBag} = useBag()
-  
   const handleForm = (evt)=>{
     setFormData({
       ...formData,
@@ -31,17 +31,23 @@ export const OrderContainer = ({ totalOrder }) => {
     order.buyer = formData
     order.items = bag.map(({id,name,price,amount})=>({id:id,name:name,price:price,amount:amount}))
     order.total = totalOrder
+
+    if(formData.phone.length < 8){
+      setFormError({...formError,phonelength:true})
+
+    }
+    else if(formData.email != formData.emailrepeated){
+      setFormError({...formError,emailvalidation:true,phonelength:false})
+      console.log('aca rey')
+    }
+    else{
+    setFormError({...formError,emailvalidation:false})
     const db = getFirestore()
     const orderCollection = collection(db,"orders")
     addDoc(orderCollection,order)
-    .then(({id})=>{
-      setOrderId(id)
-      console.log(orderId)
-      })
     .finally(()=>setBag([]))
-    
+    }
   } 
-  
   
   return (
     <>
@@ -112,18 +118,18 @@ export const OrderContainer = ({ totalOrder }) => {
           
             <label className='pt-2' htmlFor="phone">Numero de telefono</label>
             <input name='phone' onChange={handleForm} className="px-2 py-2 border-l-[1px] border-b-[1px] border-neutral-800 text-neutral-800 focus:outline-blue-500" type="number" required/>
-        
+            {formError.phonelength?<p className="text-red-600 h-10 text-sm">Minimo 8 caracteres</p>:''}
         
           
             <label className='pt-2' htmlFor="email">Email</label>
             <input name='email' onChange={handleForm} className="px-2 py-2 border-l-[1px] border-b-[1px] border-neutral-800 text-neutral-800 focus:outline-blue-500" type="email" required/>
           
       
-            <label className='pt-2'>Repetir Email</label>
-            <input className="px-2 py-2 border-l-[1px] border-b-[1px] border-neutral-800 text-neutral-800 focus:outline-blue-500" type="email" required/>
-        
+            <label htmlFor='emailrepeated' className='pt-2'>Repetir Email</label>
+            <input name='emailrepeated' onChange={handleForm}  className="px-2 py-2 border-l-[1px] border-b-[1px] border-neutral-800 text-neutral-800 focus:outline-blue-500" type="email" required/>
+           {formError.emailvalidation? <p className='text-red-600 h-10 text-sm'>Los correos no coinciden</p>:''}
   
-          <input className='py-4 px-24 my-6 bg-whitelight text-black border-[1px] border-neutral-900 hover:bg-neutral-200' type="submit" placeholder='Realizar pedido'/>
+          <input className='py-4 px-24 my-6 rounded-sm bg-black font-bold text-white border-[1px] border-neutral-900 hover:bg-white hover:text-black' type="submit" placeholder='Realizar pedido'/>
         </form>
         </>
       }
