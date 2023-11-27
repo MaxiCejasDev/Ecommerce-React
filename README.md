@@ -1,7 +1,7 @@
 # PROYECTO FINAL REACT- Curso de Coderhouse
 <h1>Magic Market</h1> 
 <p>Ecommerce relacionado con productos tecnologicos.</p>
-<img style="width:50%" src="https://drive.google.com/uc?export=download&id=1W1Me6PXAawYuD6GZ7x46L2yQ1besCiTL"/>
+<img src="https://drive.google.com/uc?export=download&id=1W1Me6PXAawYuD6GZ7x46L2yQ1besCiTL"/><img src="https://drive.google.com/uc?export=download&id=1Lf46UDaVppeo6kCNj6u24ywMzw3SQYik"/>
 <h2>Tecnologias utilizadas:</h2>
 <table>
   <tr>
