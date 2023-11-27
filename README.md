@@ -3,16 +3,13 @@
 <p>Ecommerce relacionado con productos tecnologicos.</p>
 <img src="https://drive.google.com/uc?export=download&id=1W1Me6PXAawYuD6GZ7x46L2yQ1besCiTL"/>
 <img src="https://drive.google.com/uc?export=download&id=1Lf46UDaVppeo6kCNj6u24ywMzw3SQYik"/>
-<center>
-<h2>Tecnologias utilizadas:</h2>
-</center>
 <table>
   <tr>
     <th>Herramienta</th>
     <th>Version</th>
   </tr>
   <tr>
-    <td>React</td>
+    <td><img src="https://cdn1.iconfinder.com/data/icons/education-set-3-3/74/15-512.png"/>React</td>
     <td>18.2.0</td>
   </tr>
   <tr>
@@ -35,5 +32,5 @@
   <li>Diseño Responsivo</li>
   <li>Detalles de producto</li>
   <li>Simulacion de pedido(no incluye pago)</li>
-  <li>Bolsa de compras</li>
+  <li>Bolsa de compras (Seccion y desplegable en barra de navegación)</li>
 </ul>
