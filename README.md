@@ -43,4 +43,3 @@
 <img align="center" src="https://drive.google.com/uc?export=download&id=1XlO0wfRI-QAYFPMEn2wG11nSWLtO7kNq"/>
 <img align="center" src="https://drive.google.com/uc?export=download&id=1swnEbqYv9_etbp1eyzz6LSpjB1dOyUU5"/>
 <img align="center" src="https://drive.google.com/uc?export=download&id=1K05htZNibiMrJ2EXp6QeHns-Ss7iDiHu"/>
-<img align="center" src="https://drive.google.com/uc?export=download&id=17oveG5AJoUbAyK3iSkkYUKpwzbCcpNnO"/>
