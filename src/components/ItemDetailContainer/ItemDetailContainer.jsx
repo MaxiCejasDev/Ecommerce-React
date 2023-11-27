@@ -18,7 +18,8 @@ export const ItemDetailContainer = () => {
   const [unSelectedImg,setUnSelectedImg] = useState([])
 
 
-
+// Event to get target radio input, his function is change principal front-img in card of images, At change the input radio target,
+// changes the border color of radio input 
   const handleSelectImg = (evt)=>{
     const filterSelectImg = selectImages.filter((item)=> parseFloat(item.id) === parseFloat(evt.target.value) )
     setSelectImg(filterSelectImg)
@@ -33,7 +34,6 @@ export const ItemDetailContainer = () => {
       {id: 3, img: product.img3}
     ]
    
-
   const handleAddBag = (count) => {
         addToBag({
           category: product.category,
@@ -46,6 +46,7 @@ export const ItemDetailContainer = () => {
     setPurchase(true);
   };  
 
+  // useEffect hook to obtain firebase database, this hook is responsible for bringing the product data from its id and filter the images.
   useEffect(()=>{
     const db = getFirestore()
     const itemProduct = doc(db,"products",pid)
@@ -82,18 +83,13 @@ export const ItemDetailContainer = () => {
             <h3 className="text-2xl font-poppins font-bold pb-2 ml-4">{product.name}</h3>
             <p className="font-poppins text-[16px] text-neutral-600 font-bold pb-20 ml-4">${product.price}</p>
             <ul className="h-[150px] w-full grid grid-cols-2 sm:grid-cols-3 gap-x-4 mb-20 gap-y-2 sm:mb-4 sm:gap-y-0">
-
             {selectImages.map((item)=>{
-            return(
-              
+            return(         
               <li className="h-[100px] w-[80%] flex items-center justify-center relative overflow-hidden" key={item.id}>
-                
                 <input name="select" id={item.id === 1?'img1':item.id === 2?'img2':item.id === 3?'img3':''} onChange={handleSelectImg} type="radio" value={item.id}/>
                 <label className="h-full w-full overflow-hidden flex items-center justify-center  border-[1px] border-neutral-300" htmlFor={item.id === 1?'img1':item.id === 2?'img2':item.id === 3?'img3':''}>
                  <img className="object-contain w-[80px] h-[80px] cursor-pointer" src={item.img} alt=""/>
                 </label>
-                
-        
               </li>
               )
             })}

@@ -10,7 +10,7 @@ export const NavBarMobile = ({ isOpen, dropdownMenu }) => {
   return (
     <>
       {isOpen && (
-        <div className="bg-white absolute top-0 z-10 h-screen w-full md:hidden font-poppins overflow-hidden">
+        <div className="bg-white fixed top-0 z-10 h-screen w-full md:hidden font-poppins overflow-hidden">
           <ul className="flex text-black flex-col h-full pl-4 pt-2">
             <li>
               <img

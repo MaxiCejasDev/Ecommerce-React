@@ -9,18 +9,18 @@ export const AllCategory = () => {
     min: 0,
     max: 0,
   });
-
+  // Input value of Search bar 
   const handleSearchProduct = (evt) => {
     setSearchProduct(evt.target.value.toLowerCase());
   };
-
+  // Price filtering input value 
   const handleMinMax = (e) => {
     setPriceFilter({
       ...priceFilter,
       [e.target.name]: parseInt(e.target.value),
     });
   };
-
+  // useEffect hook to get firebase database, this hook is to filtered price,get products of all categorys and filtered for search bar
   useEffect(() => {
     const db = getFirestore();
     const productsCollection = collection(db, "products");
@@ -47,7 +47,6 @@ export const AllCategory = () => {
           else{
             setAllProducts(res.docs.map((item)=>({id:item.id,...item.data()})))
           }
-      
     });
   }, [searchProduct, priceFilter]);
  

@@ -32,7 +32,6 @@ ReactDOM.createRoot(document.getElementById('root')).render(
         <Route path='/allcategory' element={<AllCategory/>}/>
         <Route path='/featured' element={<FeaturedProducts/>}/>
         <Route path='*' element={<Navigate to='/' />} />
-        
       </Routes>
       <Footer/>
     </Router>

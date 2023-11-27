@@ -2,7 +2,7 @@ import { useState } from "react"
 import { CartWidget } from "../CartWidget/CartWidget"
 import { NavCategory } from "../NavCategory/NavCategory"
 import { NavLink } from "react-router-dom"
-import { NavBarMobile } from "../../NavBarMobile/NavBarMobile"
+import { NavBarMobile } from "../NavBarMobile/NavBarMobile"
 
 export const NavBar = () => {
   const [isOpen, setIsOpen] = useState(false)

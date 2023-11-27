@@ -1,7 +1,7 @@
 import { useState } from "react";
-import { ScreenMenuMobile } from "../components/ScreenMenuMobile/ScreenMenuMobile";
-import { AccesoryMenuMobile } from "../components/AccesoryMenuMobile/AccesoryMenuMobile";
 import { Link } from "react-router-dom";
+import { ScreenMenuMobile } from "../ScreenMenuMobile/ScreenMenuMobile";
+import { AccesoryMenuMobile } from "../AccesoryMenuMobile/AccesoryMenuMobile";
 
 export const NavCategoryMobile = () => {
   const [screenMobileMenu,setScreenMobileMenu] = useState(false)

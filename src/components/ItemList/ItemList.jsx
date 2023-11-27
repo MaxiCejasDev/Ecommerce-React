@@ -29,11 +29,7 @@ export const ItemList = ({products,categoryId,loading}) => {
             </div>
           </li>   
         ))
-
       }
     </ul> 
-    
-    
-  
   </>)
 }
