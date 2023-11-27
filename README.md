@@ -9,7 +9,7 @@
     <th>Version</th>
   </tr>
   <tr>
-    <td><img src="https://drive.google.com/uc?export=download&id=11FXD0zRaGHvGcSyxXF_EBKwaalzol8e4"/>React</td>
+    <td align="center"><img src="https://drive.google.com/uc?export=download&id=11FXD0zRaGHvGcSyxXF_EBKwaalzol8e4"/>React</td>
     <td>18.2.0</td>
   </tr>
   <tr>
