@@ -44,7 +44,7 @@ export const About = () => {
               <h2 className="font-bold text-xl">NOSOTROS</h2>
             </div>
             <div className="my-8 pb-8">
-            <p className="text-base text-center lg:text-left leading-7 max-w-[540px]">
+            <p className="text-lg text-center lg:text-left leading-7 max-w-[540px]">
            Somos una tienda apasionada por la tecnología, un destino único para los aficionados y amantes de la innovación digital.<br/> <br/> 
            En nuestro establecimiento, ofrecemos una amplia gama de dispositivos electrónicos de última generación 
            y accesorios que reflejan la vanguardia tecnológica.

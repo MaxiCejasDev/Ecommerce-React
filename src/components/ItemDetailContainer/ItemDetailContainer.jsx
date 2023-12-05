@@ -4,7 +4,7 @@ import { ItemCounter } from "../Hooks/ItemCounter/ItemCounter";
 import { useBag } from "../../Context/BagProvider";
 import { Loader } from "../Loader/Loader";
 import {doc,getDoc,getFirestore} from "firebase/firestore"
-import { ItemDetailSelectImg } from "../ItemDetailSelectImg/ItemDetailSelectImg";
+import { ItemDetail } from "../ItemDetail/ItemDetail";
 
 export const ItemDetailContainer = () => {
   const { pid } = useParams();
@@ -78,7 +78,7 @@ export const ItemDetailContainer = () => {
         <Loader />
       ) : (
         <div className="grid md:grid-cols-2 h-[calc(100vh-60px)] mb-[600px] sm:mb-[500px] md:mb-0 bg-whitelight justify-items-center">
-          <ItemDetailSelectImg product={product} unSelectedImg={unSelectedImg} selectImg={selectImg}/>
+          <ItemDetail product={product} unSelectedImg={unSelectedImg} selectImg={selectImg}/>
           <div className="w-full px-10 h-full mt-8 md:mt-0 pt-[50px] bg-white">
             <h3 className="text-2xl font-poppins font-bold pb-2 ml-4">{product.name}</h3>
             <p className="font-poppins text-[16px] text-neutral-600 font-bold pb-20 ml-4">${product.price}</p>

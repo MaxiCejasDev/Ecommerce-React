@@ -5,7 +5,7 @@ export const Footer = () => {
     <div className="h-content lg:h-[400px] bg-darklight text-white overflow-hidden font-poppins">
         <div className="h-[85%] grid grid-col-1 lg:grid-cols-3 px-10 sm:px-36">
             <div className="flex flex-col py-20">
-                <h3 className="text-2xl font-bold">Products</h3>
+                <h3 className="text-2xl font-bold">Productos</h3>
                 <div className="flex">
                 <div className="text-base w-2/4">
                     <ul>
@@ -41,7 +41,7 @@ export const Footer = () => {
         </div>
         <hr className="w-[90%] h-[2px] mx-auto"/>
         <div className="text-center py-4 text-sm">
-            <p>Pagina creado por Maxi Cejas    |   maxicejas12354@gmail.com</p>
+            <p>Pagina creada por Maxi Cejas    |   maxicejas12354@gmail.com</p>
         </div>
     </div>
   )
