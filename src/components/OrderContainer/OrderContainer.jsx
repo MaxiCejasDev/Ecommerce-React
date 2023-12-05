@@ -14,7 +14,7 @@ export const OrderContainer = ({ totalOrder }) => {
     email:'',
     emailrepeated:''
   })
-  const {bag,setBag} = useBag()
+  const {bag,setBag,setOrderId} = useBag()
   // Form input value
   const handleForm = (evt)=>{
     setFormData({
@@ -40,13 +40,16 @@ export const OrderContainer = ({ totalOrder }) => {
     }
     else if(formData.email != formData.emailrepeated){
       setFormError({...formError,emailvalidation:true,phonelength:false})
-      console.log('aca rey')
     }
     else{
     setFormError({...formError,emailvalidation:false})
     const db = getFirestore()
     const orderCollection = collection(db,"orders")
     addDoc(orderCollection,order)
+    .then(({id})=>{
+      setOrderId(id)
+    })
+    .catch(error => console.log(error))
     .finally(()=>setBag([]))
     }
   } 
@@ -109,4 +112,3 @@ export const OrderContainer = ({ totalOrder }) => {
     </>
   );
 };
-// handleForm,formError,order

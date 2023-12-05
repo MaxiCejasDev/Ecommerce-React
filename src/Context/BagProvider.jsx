@@ -9,7 +9,7 @@ export const useBag = ()=>{
 export const BagProvider = ({children})=>{
     const [bag, setBag] = useState([])
     const [bagAmount,setBagAmount] = useState(0)
-
+    const [orderId,setOrderId] = useState('')
     // Function to add product to bag, also filters matches
     const addToBag = (product)=> {
         const updateBagAmount = bag.map((item)=>{
@@ -43,7 +43,7 @@ export const BagProvider = ({children})=>{
         setBag(productRefresh)
     }
     return (
-        <BagContext.Provider value={{bag,addToBag,deleteBag,bagAmount,setBag}}>
+        <BagContext.Provider value={{bag,addToBag,deleteBag,bagAmount,setBag,setOrderId,orderId}}>
             {children}
         </BagContext.Provider>
     )

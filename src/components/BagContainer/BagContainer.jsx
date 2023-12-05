@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 
 
 export const BagContainer = () => {
-  const { bag,deleteBag } = useBag();
+  const { bag,deleteBag,orderId } = useBag();
   const [totalPrice, setTotalPrice] = useState(0)
   
 
@@ -60,6 +60,7 @@ export const BagContainer = () => {
         </div>
       </div>: 
       <div className="font-poppins flex flex-col items-center justify-center h-[calc(100vh-60px)]">
+        {orderId?<p>Tu orden de compra: {orderId}</p>:''}
         <h2 className="text-4xl font-semibold text-center">No hay productos agregados</h2>
         <Link to={'/allcategory'} className="py-4 px-20 bg-whitelight text-black border-[1px] border-black mt-8 flex items-center justify-center">
           Ver productos
