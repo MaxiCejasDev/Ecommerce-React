@@ -1,6 +1,6 @@
 
 
-export const ItemDetailSelectImg = ({unSelectedImg,selectImg}) => {
+export const ItemDetail = ({unSelectedImg,selectImg}) => {
     
   return (
     <>
