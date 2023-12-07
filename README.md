@@ -34,7 +34,7 @@ de la cursada. De igual manera, pude lograr hacer mucho enfoque en tratar de mej
 <p>El proceso de creación del proyecto fue creando wireframes en escrito y creando el "diseño" en Figma. Tuve muchos borrones en cuanto
 al diseño pero lo fui adaptando durante la marcha, tratando de que quede lo mas estetico posible.</p>
 <p>Durante la cursada pude aprender nuevas tecnologías,
-Como TailwindCSS fuera de la cursada, informadome y leyendo documentación oficial, tratando de ejercer todo lo aprendido,
+tambien TailwindCSS fuera de la cursada, informadome y leyendo documentación oficial, tratando de ejercer todo lo aprendido,
 tanto, en el curso como fuera del mismo.</p>
 <p></p>
 
