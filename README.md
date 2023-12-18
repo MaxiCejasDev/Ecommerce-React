@@ -2,7 +2,7 @@
 <h1>Magic Market</h1>
 <p>Ecommerce relacionado con productos tecnologicos.
 <p><img align="center" src="https://drive.google.com/uc?export=download&id=141ntEcztldOUIJ3qpqysK2c2MwzKrFaj"/>   Ver</p>
-<p>Link: https://hilarious-blini-f299b1.netlify.app/</p>
+<p>Link: https://magicmarket.netlify.app//</p>
 <img src="https://drive.google.com/uc?export=download&id=1W1Me6PXAawYuD6GZ7x46L2yQ1besCiTL"/>
 <img src="https://drive.google.com/uc?export=download&id=1Lf46UDaVppeo6kCNj6u24ywMzw3SQYik"/>
 <table>
