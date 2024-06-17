@@ -2,7 +2,7 @@
 <h1>Magic Market</h1>
 <p>Ecommerce relacionado con productos tecnologicos.
 <p><img align="center" src="https://drive.google.com/uc?export=download&id=141ntEcztldOUIJ3qpqysK2c2MwzKrFaj"/>   Ver</p>
-<p>Link: https://hilarious-blini-f299b1.netlify.app/</p>
+<p>Link: https://magicmarket.netlify.app//</p>
 <img src="https://drive.google.com/uc?export=download&id=1W1Me6PXAawYuD6GZ7x46L2yQ1besCiTL"/>
 <img src="https://drive.google.com/uc?export=download&id=1Lf46UDaVppeo6kCNj6u24ywMzw3SQYik"/>
 <table>
@@ -27,14 +27,23 @@
     <td>4.4.5</td>
   </tr>
 </table>
-
+<h2>APRENDIZAJE</h2>
+<p>En este proyecto pude aprender y ejercer, las tecnologìas abarcadas durante el curso de React JS de Coderhouse.</p>
+<p>Si bien no pude hacer mucho énfasis en el diseño por el tiempo que contaba, ya que, fue realizado durante el proceso
+de la cursada. De igual manera, pude lograr hacer mucho enfoque en tratar de mejorar mi codigo.</p>
+<p>El proceso de creación del proyecto fue creando wireframes en escrito y creando el "diseño" en Figma. Tuve muchos borrones en cuanto
+al diseño pero lo fui adaptando durante la marcha, tratando de que quede lo mas estetico posible.</p>
+<p>Durante la cursada pude aprender nuevas tecnologías,
+tambien TailwindCSS fuera de la cursada, informadome y leyendo documentación oficial, tratando de ejercer todo lo aprendido,
+tanto, en el curso como fuera del mismo.</p>
+<p></p>
 
 <h2>Caracteristicas</h2>
 <ul>
-  <li>Diseño Responsivo</li>
-  <li>Detalles de producto</li>
-  <li>Simulacion de pedido(no incluye pago)</li>
-  <li>Bolsa de compras (Seccion y desplegable en barra de navegación)</li>
+  <li>Diseño Responsivo.</li>
+  <li>Detalles de producto.</li>
+  <li>Simulacion de pedido(no incluye pago).</li>
+  <li>Bolsa de compras (Seccion y desplegable en barra de navegación).</li>
 </ul>
 <h3>Sitio web - Imagenes</h3>
 <img align="center" src="https://drive.google.com/uc?export=download&id=1-AYf1ZYFKUdcfiGI5EenDg-phNrnanVq"/>
