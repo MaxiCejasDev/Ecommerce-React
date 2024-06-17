@@ -84,7 +84,7 @@ export const OrderContainer = ({ totalOrder }) => {
               Realizar compra
               <img
                 className="sm:h-[24px] sm:w-[32px] h-[16px] w-[16px]"
-                src="https://drive.google.com/uc?export=download&id=1Rm-2jrgy930Ekdp1vBjqSOs9AaEt0qr5"
+                src="/icons/arrow-white.svg"
                 alt=""
               />
             </button>
@@ -93,7 +93,7 @@ export const OrderContainer = ({ totalOrder }) => {
             <div className="flex justify-center items-center py-4">
               <img
                 className="h-[24px]"
-                src="https://drive.google.com/uc?export=download&id=14LJ79IawbMHuhm8ETSmxuKuDdpcucDSL"
+                src="/details-icon/truck.svg"
                 alt=""
               />
               <p className="text-greenlight ml-2 font-poppins text-sm">

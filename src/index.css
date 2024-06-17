@@ -43,7 +43,7 @@ input[type="radio"]:checked + label{
       0deg,
       rgba(0,0,0,.4),
       rgba(0,0,0,.4)
-    ),url('https://drive.google.com/uc?export=download&id=1hcZ9gRzFHOp-IbVRfgOg4c6gx63JHf1n');
+    ),url('/hero/bg-phone.jpg');
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;

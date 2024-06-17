@@ -120,7 +120,7 @@ export const AllCategory = () => {
                             className="flex"
                             to={`/${product.category}/detail/${product.id}`}
                           >
-                            Ver detalles<img className="white-img h-[20px] w-[20px] ml-2" src="https://drive.google.com/uc?export=download&id=1LsPC_PH_z_7EmsH6YSlSiw_A6VzY-K2Z" alt="" />
+                            Ver detalles
                           </Link>
                         </button>
                       </div>

@@ -12,25 +12,25 @@ export const About = () => {
           <div className="h-3/4 grid lg:grid-cols-2 lg:grid-rows-2 gap-x-2 px-2 gap-y-4 2xl:px-36">
             <div className="flex items-center justify-center xl:place-self-end xl:justify-self-center">
               <div className="flex flex-col justify-center items-center h-[150px] w-[220px] sm:h-[200px] sm:w-[300px] overflow-hidden bg-darklight rounded-3xl">
-              <img className="mb-4 h-[30px] w-[30px] white-img" src="https://drive.google.com/uc?export=download&id=1cMHB_5x3jMt_xZ_8UTi4nWPU0QGN_rCO" alt="" />
+              <img className="mb-4 h-[30px] w-[30px] white-img" src="/icons/safe-bank.svg" alt="" />
               <p className="text-base font-bold text-center">Protegemos <br/> tus datos</p>
               </div>
             </div>
             <div className="flex items-center justify-center xl:place-self-end xl:justify-self-center">
               <div className="flex flex-col justify-center items-center h-[150px] w-[220px] sm:h-[200px] sm:w-[300px] overflow-hidden bg-darklight rounded-3xl">
-              <img className="mb-4 h-[30px] w-[30px] white-img" src="https://drive.google.com/uc?export=download&id=1U2qpCGMFu7N8tiVykuMEUfnNRyWWMGJy" alt="" />
+              <img className="mb-4 h-[30px] w-[30px] white-img" src="/icons/changecheck.svg" alt="" />
               <p className="text-base font-bold text-center">Develución <br/> de productos</p>
               </div>
             </div>
             <div className="flex items-center justify-center xl:place-self-start xl:justify-self-center">
               <div className="flex flex-col justify-center items-center h-[150px] w-[220px] sm:h-[200px] sm:w-[300px] overflow-hidden bg-darklight rounded-3xl">
-              <img className="mb-4 h-[30px] w-[30px] white-img" src="https://drive.google.com/uc?export=download&id=1gPHfbuaJJYGEW8NYipntpTBxlr9_EVBa" alt="" />
+              <img className="mb-4 h-[30px] w-[30px] white-img" src="/icons/eye.svg" alt="" />
               <p className="text-base font-bold text-center">Observa el estado<br/>  de tu pedido</p>
               </div>
             </div>
             <div className="flex items-center justify-center xl:place-self-start xl:justify-self-center">
               <div className="flex flex-col justify-center items-center h-[150px] w-[220px] sm:h-[200px] sm:w-[300px] overflow-hidden bg-darklight rounded-3xl">
-              <img className="mb-4 h-[30px] w-[30px] white-img" src="https://drive.google.com/uc?export=download&id=12UhzMCEsw0P60vapDkCNwDRoall4PnQC" alt="" />
+              <img className="mb-4 h-[30px] w-[30px] white-img" src="/icons/shield.svg" alt="" />
               <p className="text-base font-bold text-center">Cuidamos<br/>  tus productos</p>
         
               </div>

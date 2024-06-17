@@ -28,7 +28,7 @@ export const FeaturedProducts = () => {
     <div className="font-poppins bg-darklight h-content min-h-[calc(100vh-60px)]">
       <div className="h-[20%] pt-4 md:pl-4 flex items-center justify-center lg:block">
         <div className="text-white text-lg md:text-2xl lg:text-4xl text-center border-white border-[1px] w-[70%] sm:w-[75%] md:w-[500px] flex justify-center items-center h-[80px]">
-          <h2 className="flex items-center justify-center">Productos destacados <img className="ml-2 h-[24px] w-[24px] lg:h-[40px] lg:w-[40px]" src="https://drive.google.com/uc?export=download&id=1g3kHfxWx6S1GlFdNKzbM4alRU3OvTZi_" alt="" /></h2>
+          <h2 className="flex items-center justify-center">Productos destacados <img className="ml-2 h-[24px] w-[24px] lg:h-[40px] lg:w-[40px]" src="/icons/fire-featured.svg" alt="" /></h2>
         </div>
       </div>
       <div>
@@ -50,7 +50,7 @@ export const FeaturedProducts = () => {
                 <div className="pb-4">
                   <button className="bg-darklight button-hover hover:bg-white hover:text-black hover:border-[1px] hover:py-[8px] hover:border-black shadow-lg shadow-neutral-300 py-[9px] px-[30px] text-white font-bold font-poppins text-sm rounded-3xl">
                     <Link className="flex" to={`/${product.category}/detail/${product.id}`}>
-                      Ver detalles <img className="white-img h-[20px] w-[20px] ml-2" src="https://drive.google.com/uc?export=download&id=1LsPC_PH_z_7EmsH6YSlSiw_A6VzY-K2Z" alt="" />
+                      Ver detalles 
                     </Link>
                   </button>
                 </div>

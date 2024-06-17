@@ -13,7 +13,7 @@ export const Bag = ({ bagOpen, handleOpenBag }) => {
         <img
           onClick={handleOpenBag}
           className="object-contain mt-[1px]"
-          src="https://drive.google.com/uc?export=download&id=1HSEm00EHuDM5jnYQ-ynERYkSE1ZEsyVN"
+          src="/nav-icon/close.svg"
           alt=""
         />
       </div>
@@ -46,7 +46,7 @@ export const Bag = ({ bagOpen, handleOpenBag }) => {
                   </div>
                   <div className="flex items-center mb-[30px]">
                     <img
-                      src="https://drive.google.com/uc?export=download&id=1QF_28JC1vd_lyvwdJJDkAUyFTfnWZ7-8"
+                      src="/icons/trash.svg"
                       className="cursor-pointer h-[30px] w-[30px] bg-red-100 rounded-lg p-1"
                       onClick={() => deleteBag(product.id)}
                     />

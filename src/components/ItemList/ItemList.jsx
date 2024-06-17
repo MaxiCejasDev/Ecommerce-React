@@ -21,7 +21,7 @@ export const ItemList = ({products,categoryId,loading}) => {
               <p className="font-poppins text-sm text-gray-600">${product.price}</p>
               <div className="pb-4">
                 <button className='bg-darklight button-hover hover:bg-white hover:text-black hover:border-[1px] hover:py-[8px] hover:border-black shadow-lg shadow-neutral-300 py-[9px] px-[30px] text-white font-bold font-poppins text-sm rounded-3xl'>
-                  <Link className="flex" to={`/${categoryId}/detail/${product.id}`}>Ver detalles<img className="white-img h-[20px] w-[20px] ml-2" src="https://drive.google.com/uc?export=download&id=1LsPC_PH_z_7EmsH6YSlSiw_A6VzY-K2Z" alt="" />
+                  <Link className="flex" to={`/${categoryId}/detail/${product.id}`}>Ver detalles
                   </Link>
                   </button>
               </div>

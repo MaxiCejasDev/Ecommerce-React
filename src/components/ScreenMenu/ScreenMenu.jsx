@@ -6,7 +6,7 @@ export const ScreenMenu = () => {
       <div className="flex">
         <img
           className="h-[20px] w-[20px]"
-          src="https://drive.google.com/uc?export=download&id=1ApKi_YpN8gLmRbh7966mXNl3pqMl1Ddb"
+          src="/category-icon/chair.svg"
           alt=""
         />
         <p className="text-white font-poppins ml-2 text-sm">Silla</p>
@@ -16,7 +16,7 @@ export const ScreenMenu = () => {
       <div className="flex">
         <img
           className="h-[20px] w-[20px]"
-          src="https://drive.google.com/uc?export=download&id=1WOIYBKar69Cpyjjwge0oQWcpY4VwaOVM"
+          src="/category-icon/headphone.svg"
           alt=""
         />
         <p className="text-white font-poppins ml-2 text-sm">Auricular</p>
@@ -26,7 +26,7 @@ export const ScreenMenu = () => {
       <div className="flex">
         <img
           className="h-[20px] w-[20px]"
-          src="https://drive.google.com/uc?export=download&id=1LIHbhHB9kGcUWiBE1I_SAb233AJYv0fE"
+          src="/category-icon/mouse.svg"
           alt=""
         />
         <p className="text-white font-poppins ml-2 text-sm">Mouse</p>
@@ -36,7 +36,7 @@ export const ScreenMenu = () => {
       <div className="flex">
         <img
           className="h-[20px] w-[20px]"
-          src="https://drive.google.com/uc?export=download&id=1ITHKWK7SjKkHBnj8-p-klOM23GO5GNUH"
+          src="/category-icon/keyboard.svg"
           alt=""
         />
         <p className="text-white font-poppins ml-2 text-sm">Teclado</p>

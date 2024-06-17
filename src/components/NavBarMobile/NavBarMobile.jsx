@@ -16,7 +16,7 @@ export const NavBarMobile = ({ isOpen, dropdownMenu }) => {
               <img
                 className="h-[30px] w-[30px] cursor-pointer"
                 onClick={dropdownMenu}
-                src="https://drive.google.com/uc?export=download&id=1HSEm00EHuDM5jnYQ-ynERYkSE1ZEsyVN"
+                src="/nav-icon/close.svg"
                 alt=""
               />
             </li>
@@ -36,7 +36,7 @@ export const NavBarMobile = ({ isOpen, dropdownMenu }) => {
                 Categorias
                 <img
                   className={categorys?"black-img h-[20px] w-[20px] duration-300 rotate-90":"black-img h-[20px] w-[20px] duration-300"}
-                  src="https://drive.google.com/uc?export=download&id=1rTVL0QwNxUGQ1S_ErjOOAHOu2poWVUdM"
+                  src="/icons/arrowCategory.svg"
                   alt=""
                 />
               </a>

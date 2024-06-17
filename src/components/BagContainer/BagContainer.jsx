@@ -48,7 +48,7 @@ export const BagContainer = () => {
                     </div>
                     <div className="w-[30%] flex items-center justify-center">
                       <button onClick={()=> deleteBag(product.id)} className="flex items-center">
-                                <img src="https://drive.google.com/uc?export=download&id=1QF_28JC1vd_lyvwdJJDkAUyFTfnWZ7-8" className="cursor-pointer h-[30px] w-[30px] bg-red-100 rounded-lg p-1"/>
+                                <img src="/icons/trash.svg" className="cursor-pointer h-[30px] w-[30px] bg-red-100 rounded-lg p-1"/>
                       </button>
                     </div>
                   </li>
@@ -64,7 +64,7 @@ export const BagContainer = () => {
         <h2 className="text-4xl font-semibold text-center">No hay productos agregados</h2>
         <Link to={'/allcategory'} className="py-4 px-20 bg-whitelight text-black border-[1px] border-black mt-8 flex items-center justify-center">
           Ver productos
-          <img className="black-img h-[24px] w-[24px]" src="https://drive.google.com/uc?export=download&id=1Rm-2jrgy930Ekdp1vBjqSOs9AaEt0qr5" alt="" />
+          <img className="black-img h-[24px] w-[24px]" src="/icons/arrow-white.svg" alt="" />
           </Link>
       </div>
       }

@@ -36,7 +36,7 @@ export const Footer = () => {
             </div>
            
             <div className="overflow-hidden flex justify-center">
-                <Link to={'/'}><img className="h-[200px] sm:h-[300px] w-[200px] sm:w-[300px]" src="https://drive.google.com/uc?export=download&id=13CH_TGZzP7Fw_MLvOWzMgSRjrO-6QndO" alt="" /></Link>
+                <Link to={'/'}><img className="h-[200px] sm:h-[300px] w-[200px] sm:w-[300px]" src="/logo.png" alt="" /></Link>
             </div>
         </div>
         <hr className="w-[90%] h-[2px] mx-auto"/>
