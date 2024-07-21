@@ -24,22 +24,21 @@ export const FeaturedProducts = () => {
 
   return (
     <>
-    <div className='bg-black h-[60px] w-full md:hidden z-0'></div>
-    <div className="font-poppins bg-darklight h-content min-h-[calc(100vh-60px)]">
-      <div className="h-[20%] pt-4 md:pl-4 flex items-center justify-center lg:block">
-        <div className="text-white text-lg md:text-2xl lg:text-4xl text-center border-white border-[1px] w-[70%] sm:w-[75%] md:w-[500px] flex justify-center items-center h-[80px]">
-          <h2 className="flex items-center justify-center">Productos destacados <img className="ml-2 h-[24px] w-[24px] lg:h-[40px] lg:w-[40px]" src="/icons/fire-featured.svg" alt="" /></h2>
-        </div>
-      </div>
+    <div className='h-[60px] w-full md:hidden z-0'></div>
+    <div className="font-poppins h-content min-h-[calc(100vh-60px)]">
+
+      
       <div>
-        <ul className="grid md:grid-cols-2 lg:grid-cols-4 gap-x-4 gap-y-4 pt-4 px-4">
-          {featured.map((product) => {
-           return <li key={product.id} className="bg-white">
-              <div className="flex flex-col justify-center items-center">
+        <ul className="grid md:grid-cols-2 lg:grid-cols-4 gap-x-4 gap-y-4 pt-4">
+          {featured.map((product) =>(
+            <li key={product.id} className="bg-white shadow-[0px_5px_10px_rgba(0,0,0,.20)] hover:scale-105 duration-300">
+              <Link to={`/${product.category}/detail/${product.id}`}>
+              
+              <div className="flex flex-col justify-center items-center pt-4 pb-10">
                 <img
-                  className="h-[200px] w-[200px] object-contain pt-2"
+                  className="h-[200px] w-[200px] object-contain"
                   src={`${product.img1}`}
-                  alt=""
+                  alt={`${product.name}`}
                 />
                 <h3 className="font-poppins text-lg text-center text-neutral-900">
                   {product.name}
@@ -47,16 +46,10 @@ export const FeaturedProducts = () => {
                 <p className="font-poppins text-sm text-gray-600">
                   ${product.price}
                 </p>
-                <div className="pb-4">
-                  <button className="bg-darklight button-hover hover:bg-white hover:text-black hover:border-[1px] hover:py-[8px] hover:border-black shadow-lg shadow-neutral-300 py-[9px] px-[30px] text-white font-bold font-poppins text-sm rounded-3xl">
-                    <Link className="flex" to={`/${product.category}/detail/${product.id}`}>
-                      Ver detalles 
-                    </Link>
-                  </button>
-                </div>
               </div>
-            </li>;
-          })}
+              </Link>
+            </li>
+          ))}
         </ul>
       </div>
     </div>

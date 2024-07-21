@@ -11,7 +11,7 @@ import { initializeFirebase } from './firebase/config'
 import { BagContainer } from './components/BagContainer/BagContainer'
 import { AllCategory } from './components/AllCategory/AllCategory'
 import { FeaturedProducts } from './components/FeaturedProducts/FeaturedProducts'
-import { About } from './components/About/About'
+
 import { Footer } from './components/Footer/Footer'
 
 
@@ -25,7 +25,6 @@ ReactDOM.createRoot(document.getElementById('root')).render(
       <NavBar/>
       <Routes>
         <Route path='/' element={<Hero/>}/>
-        <Route path='/about' element={<About/>}/>
         <Route path='/category/:cid' element={<ItemListContainer/>}/>
         <Route path='/:cid/detail/:pid' element={<ItemDetailContainer/>}/>
         <Route path='/bag' element={<BagContainer/>}/>
