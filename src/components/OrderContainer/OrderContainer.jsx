@@ -3,57 +3,113 @@ import { useBag } from '../../Context/BagProvider';
 import { useState } from 'react';
 import { OrderForm } from '../OrderForm/OrderForm';
 
+const emailRegexp = new RegExp(/[^@ \t\r\n]+@[^@ \t\r\n]+\.[^@ \t\r\n]+/)
 
 export const OrderContainer = ({ totalOrder }) => {
-  const [formOrder,setFormOrder] = useState(true)
-  const [formError,setFormError] = useState({phonelength: false,emailvalidation: false})
-  const [formData,setFormData] = useState({
-    name:'',
+  const [orderData, setOrderData] = useState({
+    name: '',
     lastname: '',
+    email: 0,
+    province: '',
+    city: '',
     phone: '',
-    email:'',
-    emailrepeated:''
+    address: ''
   })
-  const {bag,setBag,setOrderId} = useBag()
-  // Form input value
+  const [formValidation, setFormValidation] = useState(false)
+  const [formError, setFormError] = useState({
+    nameHasError: false,
+    lastnameHasError: false,
+    emailHasError: false,
+    provinceHasError: false,
+    cityHasError: false,
+    phoneHasError: false,
+    addressHasError: false,
+  })
+  const [formOrder,setFormOrder] = useState(true)
   const handleForm = (evt)=>{
-    setFormData({
-      ...formData,
+    setOrderData({
+      ...orderData,
       [evt.target.name] : evt.target.value
     })
   }
   
+  const {bag,setBag,setOrderId} = useBag()
+  // // Form input value
+
+  const handleNameBlur = ()=>{
+    if(orderData.name.trim() === ''){
+      setFormError((prev)=>({
+        ...prev,
+        nameHasError: true
+      }))
+    }
+  }
+  const handleLastnameBlur = ()=>{
+    if (orderData.lastname.trim() === '') {
+      setFormError((prev)=>({
+        ...prev,
+        lastnameHasError: true
+      }))
+    }
+    
+  }
+  const handleEmailBlur = ()=>{
+    const hasError = !emailRegexp.test(orderData.email)
+    setFormError((prev)=>({
+      ...prev,
+      emailHasError: hasError
+    }))
+  }
+  const handlePhoneBlur = ()=>{
+    if(typeof orderData.phone !== 'number' && isNaN(orderData.phone) || orderData.phone.trim() === ''){
+      setFormError((prev)=>({
+        ...prev,
+        phoneHasError: true
+      }))
+    }
+  }
+  const handleAddressBlur = ()=>{
+    if (orderData.address.trim() === '') {
+      setFormError((prev)=>({
+        ...prev,
+        addressHasError: true
+      }))
+    }
+  }
   const handleFormOrder = ()=>{
     setFormOrder(!formOrder)
   }
+
   // Set order to firebase database and validacion of form
-  const order = (e)=>{
-    e.preventDefault()
-    const order = {}
-    order.buyer = formData
-    order.items = bag.map(({id,name,price,amount})=>({id:id,name:name,price:price,amount:amount}))
-    order.total = totalOrder
-
-    if(formData.phone.length < 8){
-      setFormError({...formError,phonelength:true})
-
-    }
-    else if(formData.email != formData.emailrepeated){
-      setFormError({...formError,emailvalidation:true,phonelength:false})
-    }
-    else{
-    setFormError({...formError,emailvalidation:false})
-    const db = getFirestore()
-    const orderCollection = collection(db,"orders")
-    addDoc(orderCollection,order)
-    .then(({id})=>{
-      setOrderId(id)
-    })
-    .catch(error => console.log(error))
-    .finally(()=>setBag([]))
-    }
-  } 
+  // const order = (e)=>{
+  //   e.preventDefault()
+  //   if (formValidation) {
+  //     const order = {}
+  //     order.buyer = orderData
+  //     order.items = bag.map(({id,name,price,amount})=>({id:id,name:name,price:price,amount:amount}))
+  //     order.total = totalOrder
+      
   
+  //     const db = getFirestore()
+  //     const orderCollection = collection(db,"orders")
+  //     addDoc(orderCollection,order)
+  //     .then(({id})=>{
+  //       setOrderId(id)
+  //     })
+  //     .catch(error => console.log(error))
+  //     .finally(()=>setBag([]))
+  //     }
+  //   }
+    const formBlurFunctions = {
+      handleNameBlur,
+      handleLastnameBlur,
+      handleEmailBlur,
+      handlePhoneBlur,
+      handleAddressBlur,
+      formError
+    }
+   
+  console.log(orderData)
   return (
     <>
       <div className="flex h-full min-h-[calc(100vh-60px)] lg:w-[80%] bg-white flex-col">
@@ -104,7 +160,7 @@ export const OrderContainer = ({ totalOrder }) => {
           </div>
         </div>
         : 
-        <OrderForm order={order} formError={formError} handleForm={handleForm}/>
+        <OrderForm formBlurFunctions={formBlurFunctions} handleForm={handleForm}/>
       }
       </div>
       
@@ -112,3 +168,4 @@ export const OrderContainer = ({ totalOrder }) => {
     </>
   );
 };
+// order={order} 
