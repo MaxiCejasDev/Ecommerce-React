@@ -3,19 +3,20 @@ import { useBag } from '../../Context/BagProvider';
 import { useState } from 'react';
 import { OrderForm } from '../OrderForm/OrderForm';
 
+
 const emailRegexp = new RegExp(/[^@ \t\r\n]+@[^@ \t\r\n]+\.[^@ \t\r\n]+/)
 
 export const OrderContainer = ({ totalOrder }) => {
+
   const [orderData, setOrderData] = useState({
     name: '',
     lastname: '',
-    email: 0,
+    email: '',
     province: '',
     city: '',
     phone: '',
     address: ''
   })
-  const [formValidation, setFormValidation] = useState(false)
   const [formError, setFormError] = useState({
     nameHasError: false,
     lastnameHasError: false,
@@ -34,7 +35,7 @@ export const OrderContainer = ({ totalOrder }) => {
   }
   
   const {bag,setBag,setOrderId} = useBag()
-  // // Form input value
+
 
   const handleNameBlur = ()=>{
     if(orderData.name.trim() === ''){
@@ -43,12 +44,24 @@ export const OrderContainer = ({ totalOrder }) => {
         nameHasError: true
       }))
     }
+    else{
+      setFormError((prev)=>({
+        ...prev,
+        nameeHasError: false
+      }))
+    }
   }
   const handleLastnameBlur = ()=>{
     if (orderData.lastname.trim() === '') {
       setFormError((prev)=>({
         ...prev,
         lastnameHasError: true
+      }))
+    }
+    else{
+      setFormError((prev)=>({
+        ...prev,
+        lastnameHasError: false
       }))
     }
     
@@ -67,7 +80,14 @@ export const OrderContainer = ({ totalOrder }) => {
         phoneHasError: true
       }))
     }
+    else{
+      setFormError((prev)=>({
+        ...prev,
+        phoneHasError: false
+      }))
+    }
   }
+  
   const handleAddressBlur = ()=>{
     if (orderData.address.trim() === '') {
       setFormError((prev)=>({
@@ -75,31 +95,39 @@ export const OrderContainer = ({ totalOrder }) => {
         addressHasError: true
       }))
     }
+    else{
+      setFormError((prev)=>({
+        ...prev,
+        addressHasError: false
+      }))
+    }
   }
+
   const handleFormOrder = ()=>{
     setFormOrder(!formOrder)
   }
 
   // Set order to firebase database and validacion of form
-  // const order = (e)=>{
-  //   e.preventDefault()
-  //   if (formValidation) {
-  //     const order = {}
-  //     order.buyer = orderData
-  //     order.items = bag.map(({id,name,price,amount})=>({id:id,name:name,price:price,amount:amount}))
-  //     order.total = totalOrder
+  const order = (e)=>{
+    e.preventDefault()
+    if (!formError.nameHasError && !formError.lastnameHasError && !formError.emailHasError && !formError.phoneHasError && !formError.addressHasError) {
+    
+      const order = {}
+      order.buyer = orderData
+      order.items = bag.map(({id,name,price,amount})=>({id:id,name:name,price:price,amount:amount}))
+      order.total = totalOrder
       
   
-  //     const db = getFirestore()
-  //     const orderCollection = collection(db,"orders")
-  //     addDoc(orderCollection,order)
-  //     .then(({id})=>{
-  //       setOrderId(id)
-  //     })
-  //     .catch(error => console.log(error))
-  //     .finally(()=>setBag([]))
-  //     }
-  //   }
+      const db = getFirestore()
+      const orderCollection = collection(db,"orders")
+      addDoc(orderCollection,order)
+      .then(({id})=>{
+        setOrderId(id)
+      })
+      .catch(error => console.log(error))
+      .finally(()=>setBag([]))
+      }
+    }
     const formBlurFunctions = {
       handleNameBlur,
       handleLastnameBlur,
@@ -109,7 +137,6 @@ export const OrderContainer = ({ totalOrder }) => {
       formError
     }
    
-  console.log(orderData)
   return (
     <>
       <div className="flex h-full min-h-[calc(100vh-60px)] lg:w-[80%] bg-white flex-col">
@@ -160,7 +187,7 @@ export const OrderContainer = ({ totalOrder }) => {
           </div>
         </div>
         : 
-        <OrderForm formBlurFunctions={formBlurFunctions} handleForm={handleForm}/>
+        <OrderForm orderData={orderData} order={order} formBlurFunctions={formBlurFunctions} handleForm={handleForm}/>
       }
       </div>
       
@@ -168,4 +195,3 @@ export const OrderContainer = ({ totalOrder }) => {
     </>
   );
 };
-// order={order} 

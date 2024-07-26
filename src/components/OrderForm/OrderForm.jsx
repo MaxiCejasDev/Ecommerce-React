@@ -1,14 +1,65 @@
-export const OrderForm = ({formBlurFunctions,handleForm}) => {
+import { useEffect, useState } from "react"
+import ProvinceInput from "../ProvinceInput/ProvinceInput"
+import CityInput from "../CityInput/CityInput"
+
+export const OrderForm = ({orderData,order,formBlurFunctions,handleForm}) => {
   const {handleNameBlur,
     handleLastnameBlur,
     handleEmailBlur,
     handlePhoneBlur,
     handleAddressBlur,
   formError} = formBlurFunctions
-  console.log(formError)
+  const [province, setProvince] = useState([])
+  const [city, setCity] = useState([])
+  useEffect(()=>{
+  fetch('https://apis.datos.gob.ar/georef/api/provincias')
+  .then((res)=>{
+  if(res){
+    return res.json()
+  }
+  else{
+  throw new Error('Error al obtener provincias')
+  }})
+  .then((data)=>{
+    
+      const provinceData = data.provincias.map((item)=>{
+        return {
+          id: item.id,
+          name: item.nombre,
+          city: []
+        }
+      })
+      setProvince(provinceData)
+  })
+  .catch(err=> console.error(err))
+  },[])
+  useEffect(()=>{
+    if (province.length > 0) {
+      Promise.all(province.map((item) => {
+        return fetch(`https://apis.datos.gob.ar/georef/api/localidades?provincia=${item.id}&campos=nombre&max=100`)
+          .then((res) => res.json())
+          .then((data) => {
+            return {
+              provinceId: item.id,
+              cities: data.localidades
+            }
+          })
+      }))
+      .then((results) => {
+        const cityData = results.reduce((acc, result) => {
+          acc[result.provinceId] = result.cities
+          return acc
+        }, {})
+        setCity(cityData)
+      })
+      .catch(err => console.error(err))
+    }
+    
+  },[province])
+
   return (
     <>
-  <form className="h-full w-full flex flex-col px-4 gap-y-6 py-10" action="">
+  <form onSubmit={order} className="h-full w-full flex flex-col px-4 gap-y-6 py-10" action="">
     <div className="w-full h-[50px] flex justify-between relative">
       <div className="h-[50px] w-[50px] bg-[#0EA5E9] rounded-full flex justify-center items-center">
         <img className="w-[30px] h-[30px]" src="/icons/check.svg" alt="Check icon" />
@@ -35,8 +86,8 @@ export const OrderForm = ({formBlurFunctions,handleForm}) => {
       {formError.emailHasError && <p className="text-red-600 text-xs top-full left-2 absolute">Ingrese un email valido</p>}
     </div>
     <div className="flex gap-x-2 relative">
-      <input onChange={handleForm} autoComplete="off" name="province" className="w-full pl-2 py-4 rounded-[8px] border-[1px] border-[#BCBCBC] bg-transparent outline-2 outline-[#0EA5E9]" type="text" placeholder="Provincia"/>
-      <input onChange={handleForm} autoComplete="off" name="city" className="w-full pl-2 py-4 rounded-[8px] border-[1px] border-[#BCBCBC] bg-transparent outline-2 outline-[#0EA5E9]" type="text" placeholder="Ciudad"/>
+      <ProvinceInput handleform={handleForm} province={province}/>
+      <CityInput orderData={orderData} handleForm={handleForm} province={province} city={city}/>
     </div>
     <div className="flex gap-x-2 relative">
       <div className="w-[80px] flex rounded-[8px] justify-center items-center border-[1px] border-[#BCBCBC] text-[#888888] py-4"><p>+54</p></div>
@@ -47,7 +98,7 @@ export const OrderForm = ({formBlurFunctions,handleForm}) => {
       <input onChange={handleForm} onBlur={handleAddressBlur} autoComplete="off" name="address" className="w-full pl-2 py-4 rounded-[8px] border-[1px] border-[#BCBCBC] bg-transparent outline-2 outline-[#0EA5E9]" type="text" placeholder="Dirección de domicilio" />
       {formError.addressHasError && <p className="text-red-600 text-xs top-full left-2 absolute">Ingrese una dirección valida</p>}
     </div>
-    <button className="py-4 px-10 bg-darkpure text-white rounded-[12px] hover:bg-darklight font-bold text-lg">Confirmar</button>
+    <button type="submit" className="py-4 px-10 bg-darkpure text-white rounded-[12px] hover:bg-darklight font-bold text-lg">Confirmar</button>
   </form>
   </>
   )
