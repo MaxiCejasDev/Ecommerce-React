@@ -2,7 +2,7 @@ import { useEffect, useState } from "react"
 import ProvinceInput from "../ProvinceInput/ProvinceInput"
 import CityInput from "../CityInput/CityInput"
 
-export const OrderForm = ({orderData,order,formBlurFunctions,handleForm}) => {
+export const OrderForm = ({notCompleteForm,orderData,order,formBlurFunctions,handleForm}) => {
   const {handleNameBlur,
     handleLastnameBlur,
     handleEmailBlur,
@@ -60,21 +60,7 @@ export const OrderForm = ({orderData,order,formBlurFunctions,handleForm}) => {
   return (
     <>
   <form onSubmit={order} className="h-full w-full flex flex-col px-4 gap-y-6 py-10" action="">
-    <div className="w-full h-[50px] flex justify-between relative">
-      <div className="h-[50px] w-[50px] bg-[#0EA5E9] rounded-full flex justify-center items-center">
-        <img className="w-[30px] h-[30px]" src="/icons/check.svg" alt="Check icon" />
-        
-      </div>
-      <div className="absolute h-[2px] w-[178px] left-[50px] bg-black top-[calc(50%-2px)]"></div>
-      <div className="h-[50px] w-[50px] bg-[#EDEDED] text-[#8D8D8D] rounded-full flex justify-center items-center">
-        <p className="font-semibold text-lg">2</p>
-      </div>
-      <div className="absolute h-[2px]  left-[278px] w-[178px] bg-[#8D8D8D] top-[calc(50%-2px)]"></div>
-      <div className="h-[50px] w-[50px] bg-[#EDEDED] text-[#8D8D8D] rounded-full flex justify-center items-center">
-        <p className="font-semibold text-lg">3</p>
-        
-      </div>
-    </div>
+
     <div className="flex gap-x-2 relative">
       <input onChange={handleForm} onBlur={handleNameBlur} autoComplete="off" name="name" className="w-full pl-2 py-4 rounded-[8px] border-[1px] border-[#BCBCBC] bg-transparent outline-2 outline-[#0EA5E9]" type="text" placeholder="Nombre"/>
       {formError.nameHasError && <p className="text-red-600 text-xs top-full left-2 absolute">Ingrese su nombre</p>}
@@ -98,6 +84,7 @@ export const OrderForm = ({orderData,order,formBlurFunctions,handleForm}) => {
       <input onChange={handleForm} onBlur={handleAddressBlur} autoComplete="off" name="address" className="w-full pl-2 py-4 rounded-[8px] border-[1px] border-[#BCBCBC] bg-transparent outline-2 outline-[#0EA5E9]" type="text" placeholder="Dirección de domicilio" />
       {formError.addressHasError && <p className="text-red-600 text-xs top-full left-2 absolute">Ingrese una dirección valida</p>}
     </div>
+    {notCompleteForm && <p className="text-red-600 text-xs mx-auto">Completa todos los datos para confirmar</p>}
     <button type="submit" className="py-4 px-10 bg-darkpure text-white rounded-[12px] hover:bg-darklight font-bold text-lg">Confirmar</button>
   </form>
   </>

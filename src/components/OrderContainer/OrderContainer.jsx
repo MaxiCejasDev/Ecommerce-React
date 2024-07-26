@@ -7,7 +7,7 @@ import { OrderForm } from '../OrderForm/OrderForm';
 const emailRegexp = new RegExp(/[^@ \t\r\n]+@[^@ \t\r\n]+\.[^@ \t\r\n]+/)
 
 export const OrderContainer = ({ totalOrder }) => {
-
+  const [notCompleteForm, setNotCompleteForm] = useState(false)
   const [orderData, setOrderData] = useState({
     name: '',
     lastname: '',
@@ -36,7 +36,7 @@ export const OrderContainer = ({ totalOrder }) => {
   
   const {bag,setBag,setOrderId} = useBag()
 
-
+  console.log(formError)
   const handleNameBlur = ()=>{
     if(orderData.name.trim() === ''){
       setFormError((prev)=>({
@@ -47,7 +47,7 @@ export const OrderContainer = ({ totalOrder }) => {
     else{
       setFormError((prev)=>({
         ...prev,
-        nameeHasError: false
+        nameHasError: false
       }))
     }
   }
@@ -110,8 +110,11 @@ export const OrderContainer = ({ totalOrder }) => {
   // Set order to firebase database and validacion of form
   const order = (e)=>{
     e.preventDefault()
-    if (!formError.nameHasError && !formError.lastnameHasError && !formError.emailHasError && !formError.phoneHasError && !formError.addressHasError) {
-    
+    if (!formError.nameHasError && !formError.lastnameHasError && !formError.emailHasError && !formError.phoneHasError && !formError.addressHasError &&
+      orderData.name.trim() !== '' && orderData.lastname.trim() !== '' && orderData.email.trim() !== '' && orderData.province.trim() !== '' && orderData.city.trim() !== '' &&
+      orderData.phone.trim() !== '' && orderData.address.trim() !== '' 
+    ) {
+      
       const order = {}
       order.buyer = orderData
       order.items = bag.map(({id,name,price,amount})=>({id:id,name:name,price:price,amount:amount}))
@@ -125,7 +128,13 @@ export const OrderContainer = ({ totalOrder }) => {
         setOrderId(id)
       })
       .catch(error => console.log(error))
-      .finally(()=>setBag([]))
+      .finally(()=>{
+        setNotCompleteForm(false)
+        setBag([])
+      })
+      }
+      else{
+        setNotCompleteForm(true)
       }
     }
     const formBlurFunctions = {
@@ -187,7 +196,7 @@ export const OrderContainer = ({ totalOrder }) => {
           </div>
         </div>
         : 
-        <OrderForm orderData={orderData} order={order} formBlurFunctions={formBlurFunctions} handleForm={handleForm}/>
+        <OrderForm notCompleteForm={notCompleteForm} orderData={orderData} order={order} formBlurFunctions={formBlurFunctions} handleForm={handleForm}/>
       }
       </div>
       
