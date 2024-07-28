@@ -23,7 +23,7 @@ export const NavCategory = () => {
     }
 
   return (
-    <div className="md:h-[220px] md:w-[300px] md:bg-darklight md:absolute md:top-[50px] md:block hidden">
+    <div className="md:h-[220px] z-10 md:w-[300px] md:bg-darklight md:absolute md:top-[50px] md:block hidden">
         <div className="p-[40px]">
             <div className="py-3 w-full flex items-center">
                 <Link to={'/allcategory'} className="flex">

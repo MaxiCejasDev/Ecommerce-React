@@ -17,7 +17,7 @@ export const Bag = ({ bagOpen, handleOpenBag }) => {
           alt=""
         />
       </div>
-        <div className="bg-white h-screen w-screen pt-10 right-[-11px] top-[-19px] md:w-[34vw] md:pt-0 md:h-[68vh] grid grid-rows-rowbag md:rounded-bl-2xl md:rounded-br-2xl absolute md:top-10 md:right-0 z-[20] md:border-[1.5px] md:border-bagstroke">
+        <div className="bg-white h-screen w-screen pt-10 left-0 md:left-auto top-[-19px] md:w-[34vw] md:pt-0 md:h-[68vh] grid grid-rows-rowbag md:rounded-bl-2xl md:rounded-br-2xl fixed md:absolute md:top-10 md:right-[-11px] z-[20] md:border-[1.5px] md:border-bagstroke">
           
           <div className="md:border-b-[1px] md:border-bagstroke flex justify-center items-center pt-8 md:pt-0">
             <h3 className="text-center font-bold font-poppins md:text-[0.9rem] text-base">

@@ -24,10 +24,10 @@ export default function CityInput({orderData,handleForm,province,city}){
     },[orderData.province])
     return(
         <>
-        <select onChange={handleForm} className="w-full pl-2 py-4 rounded-[8px] border-[1px] border-[#BCBCBC] bg-transparent outline-2 outline-[#0EA5E9]" name="city" id="city">
-            <option value="" disabled selected>Ciudad</option>
+        <select onChange={handleForm} className="w-full pl-2 py-4 rounded-[8px] border-[1px] text-[#888888] border-darklight bg-transparent outline-2 outline-[#0EA5E9]" name="city" id="city">
+            <option className="text-xs" value="" disabled selected>Ciudad</option>
             {citiesProvince?.map(({id,nombre})=>(
-                <option key={id} value={nombre}>{nombre}</option>
+                <option className="text-xs" key={id} value={nombre}>{nombre}</option>
             ))}
         </select>
         </>

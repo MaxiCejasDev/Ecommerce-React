@@ -21,7 +21,7 @@ export const NavCategoryMobile = () => {
         <img
           className="h-[20px] w-[20px] black-img"
           src="/icons/noteCategory.svg"
-          alt=""
+          alt="Note icon"
         />
         <Link to={'/allcategory'} className="ml-2">
           Todas las categorias
@@ -31,7 +31,7 @@ export const NavCategoryMobile = () => {
         <img
           className="h-[20px] w-[20px] black-img"
           src="/icons/plugCategory.svg"
-          alt=""
+          alt="Plug icon"
         />
         <a className="ml-2">
           Accesorios
@@ -39,7 +39,7 @@ export const NavCategoryMobile = () => {
         <img
           className={accesoryMobileMenu?"black-img h-[20px] w-[20px] rotate-90 duration-300":"black-img h-[20px] w-[20px] duration-300"}
           src="/icons/arrowCategory.svg"
-          alt=""
+          alt="Arrow icon"
         />
         {accesoryMobileMenu && <AccesoryMenuMobile/>}
       </div>
@@ -47,7 +47,7 @@ export const NavCategoryMobile = () => {
         <img
           className="h-[20px] w-[20px] black-img"
           src="/icons/screenCategory.svg"
-          alt=""
+          alt="Screen icon"
         />
         <a className="ml-2">
           Pantallas
@@ -55,7 +55,7 @@ export const NavCategoryMobile = () => {
         <img
           className={screenMobileMenu?"black-img h-[20px] w-[20px] rotate-90 duration-300":"black-img h-[20px] w-[20px] duration-300"}
           src="/icons/arrowCategory.svg"
-          alt=""
+          alt="Arrow icon"
         />
         {screenMobileMenu && <ScreenMenuMobile/>}
       </div>

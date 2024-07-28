@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 export const ScreenMenuMobile = () => {
   return (
-    <div className="absolute grid grid-rows-4 text-black top-[52px] border-l-[1px] border-black left-[80%] z-20 md:hidden">
+    <div className="absolute grid grid-rows-4 text-black top-[52px] border-l-[1px] border-black left-full z-20 md:hidden">
       <Link className="ml-2 py-[12px]" to={'/category/silla'}>
       <div className="flex">
         <img

@@ -19,7 +19,7 @@ postcss.config.json
 README.md
 tailwind.config.js
 vite.config.js
-
+/src/firebase/config.js
 # Editor directories and files
 .vscode/*
 !.vscode/extensions.json

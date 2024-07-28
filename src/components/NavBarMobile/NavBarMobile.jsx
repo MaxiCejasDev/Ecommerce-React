@@ -11,7 +11,7 @@ export const NavBarMobile = ({ isOpen, dropdownMenu }) => {
     <>
       {isOpen && (
         <div className="bg-white fixed top-0 z-10 h-screen w-full md:hidden font-poppins overflow-hidden">
-          <ul className="flex text-black flex-col h-full pl-4 pt-2">
+          <ul className="flex text-darklight text-lg font-semibold flex-col h-full pl-4 pt-2">
             <li>
               <img
                 className="h-[30px] w-[30px] cursor-pointer"
@@ -23,11 +23,6 @@ export const NavBarMobile = ({ isOpen, dropdownMenu }) => {
             <li className="pt-6">
               <NavLink to={"./"} activeclassname="currentCategory">
                 Inicio
-              </NavLink>
-            </li>
-            <li className="pt-6">
-              <NavLink to={"/about"} activeclassname="currentCategory">
-                Nosotros
               </NavLink>
             </li>
 

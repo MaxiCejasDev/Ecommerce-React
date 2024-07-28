@@ -29,7 +29,7 @@ export const FeaturedProducts = () => {
 
       
       <div>
-        <ul className="grid md:grid-cols-2 lg:grid-cols-4 gap-x-4 gap-y-4 pt-4">
+        <ul className="grid md:grid-cols-2 lg:grid-cols-4 gap-x-4 gap-y-4 md:pt-4">
           {featured.map((product) =>(
             <li key={product.id} className="bg-white shadow-[0px_5px_10px_rgba(0,0,0,.20)] hover:scale-105 duration-300">
               <Link to={`/${product.category}/detail/${product.id}`}>
